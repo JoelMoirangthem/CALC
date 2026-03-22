@@ -1,5 +1,0 @@
-package com.joel;
-
-public interface Instruction {
-    void execute(Environment env);
-}
