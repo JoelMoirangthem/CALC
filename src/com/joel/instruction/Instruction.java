@@ -1,5 +1,7 @@
 package com.joel.instruction;
+import com.joel.runtime.Environment;
+public interface Instruction {
 
-public class Instruction {
+    void execute(Environment env);
 
 }

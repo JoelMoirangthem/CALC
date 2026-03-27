@@ -1,5 +1,13 @@
 package com.joel.ast;
+import com.joel.runtime.Environment;
+public class NumberNode implements Expression {
+    private double value;
 
-public class NumberNode {
-
+    public NumberNode(double value){
+        this.value = value;
+    }
+    @Override
+    public Object evaluate(Environment env) {
+        return value;
+    }
 }

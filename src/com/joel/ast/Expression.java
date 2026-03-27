@@ -1,5 +1,5 @@
 package com.joel.ast;
-
-public class Expression {
-
+import com.joel.runtime.Environment;
+public interface Expression {
+    Object evaluate(Environment env);
 }
