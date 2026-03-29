@@ -8,22 +8,21 @@
 
 CALC is a **mini programming language interpreter** that lets you write and execute simple programs.
 
-It helps you understand:
-- How a **compiler/interpreter works**
-- How code is converted into tokens → parsed → executed
-- Core concepts of programming languages
+### 🎯 What you'll learn:
+- How interpreters work
+- Tokenization → Parsing → Execution
+- Core programming language concepts
 
 ---
 
-## 🧠 How It Works (Big Picture)
+## 🧠 How It Works
+
+## Source Code → Tokenizer → Parser → Interpreter → Output
 
 
-Source Code → Tokenizer → Parser → Instructions → Interpreter → Output
-
-
-Step-by-step:
+### Step-by-step:
 1. **Tokenizer (Lexer)** → Breaks code into tokens  
-2. **Parser** → Converts tokens into instructions (AST)  
+2. **Parser** → Converts tokens into instructions  
 3. **Interpreter** → Executes instructions  
 4. **Environment** → Stores variables  
 
@@ -34,8 +33,8 @@ Step-by-step:
 - ➕ Arithmetic operations: `+ - * / %`
 - 🧾 Variables: `x := 10`
 - 📤 Print: `>> x`
-- ❓ Inline If: `? condition => action`
-- 🔁 Repeat Loop: `@ count => action`
+- ❓ If condition: `? condition => action`
+- 🔁 Loop: `@ count => action`
 
 ---
 
@@ -43,13 +42,12 @@ Step-by-step:
 
 - Java JDK **17+**
 - Terminal / PowerShell
-- Basic Java knowledge (helpful but not required)
 
 ---
 
-## ⚙️ How to Run (Step-by-Step)
+## ⚙️ Run the Project
 
-### 🖥️ Windows (PowerShell)
+### 🖥 Windows (PowerShell)
 
 ```powershell
 cd src
@@ -57,10 +55,8 @@ cd src
 javac -d out com\Main.java com\interpreter\Interpreter.java com\lexer\Tokenizer.java com\lexer\Token.java com\lexer\TokenType.java com\parser\Parser.java com\parser\nodes\*.java com\instructions\*.java com\runtime\Environment.java
 
 java -cp out com.Main
+```
 🧪 Example Program
-
-Put this inside Main.java:
-
 String source = """
     x := 10
     y := 20
@@ -80,16 +76,16 @@ String source = """
 5
 6
 50
-📖 Language Syntax (Easy Guide)
-🔹 1. Variable Assignment
+📖 Syntax Guide
+🔹 Variable
 x := 10
-🔹 2. Print
+🔹 Print
 >> x
-🔹 3. If Condition
+🔹 If
 ? x > 5 => >> x
-🔹 4. Loop (Repeat)
+🔹 Loop
 @ 3 => >> x
-🔹 5. Expressions
+🔹 Expressions
 x + y * 2
 x > y
 x == y
@@ -97,107 +93,100 @@ x == y
 ❌ : is invalid → use :=
 Inline blocks end at newline
 Strings are not fully supported yet
-Boolean logic uses numbers (0 = false, 1 = true)
+Boolean logic: 0 = false, 1 = true
 📁 Project Structure
+
 src/com/
 │
-├── lexer/          → Tokenizer & Token Types
-├── parser/         → Parser logic
-├── parser/nodes/   → Expression nodes
-├── instructions/   → Execution instructions
-├── interpreter/    → Runs everything
-├── runtime/        → Variable storage (Environment)
+├── lexer/          → Tokenizer & Tokens
+├── parser/         → Parsing logic
+├── parser/nodes/   → Expressions
+├── instructions/   → Execution logic
+├── interpreter/    → Core engine
+├── runtime/        → Variables (Environment)
 └── Main.java       → Entry point
-👨‍💻 Beginner-Friendly Contribution Guide
-🚀 Step 1: Fork & Clone
+
+👨‍💻 Contribution Guide
+1️⃣ Fork & Clone
 git clone <your-fork-url>
 cd CALC
-🌱 Step 2: Create Branch
+2️⃣ Create Branch
 git checkout -b feat/my-feature
-🧪 Step 3: Test Your Changes
-Modify Main.java
-Run program
-Check output
-💾 Step 4: Commit
+3️⃣ Test Changes
+Edit Main.java
+Run project
+Verify output
+4️⃣ Commit
 git add .
-git commit -m "Added new feature"
-📤 Step 5: Push
+git commit -m "Added feature"
+5️⃣ Push
 git push origin feat/my-feature
-🔁 Step 6: Open Pull Request
+6️⃣ Open PR
 
 Explain:
 
 What you added
-Why it is useful
+Why it matters
 ✅ PR Checklist
  Code compiles
- No unnecessary changes
- Example added in Main.java
+ Clean changes
+ Example added
  Clear commit message
-🛣 Roadmap (Future Ideas)
-✅ Multi-line if-else
-✅ Functions
-✅ String support
-✅ Better error messages
-✅ Boolean type system
-✅ File input support
-🐞 Common Errors & Fixes
-❌ Error: Unexpected character: :
+🛣 Roadmap
+Multi-line if-else
+Functions
+String support
+Better errors
+Boolean types
+File input support
+🐞 Common Errors
+❌ Unexpected character: :
+x := 10   ✅ correct
+x : 10    ❌ wrong
+❌ Parser Error
+Check syntax
+Avoid extra blank lines
+💡 Why This Project?
 
-👉 Use:
+This helps you understand:
 
-x := 10
-❌ Parser Error (NEWLINE)
-
-👉 Check:
-
-Extra empty lines
-Incorrect syntax
-💡 Why This Project Matters
-
-This project helps you learn:
-
-How languages like Python/JavaScript work internally
-Parsing & AST concepts
-Real-world backend logic
+How languages like Python/JS work internally
+AST & parsing
+Real interpreter design
 📜 License
 
-MIT License (recommended)
+MIT License
 
 👤 Maintainer
 
 Joel Moirangthem
 
-⭐ Want to Improve This?
-
-You can:
-
+⭐ Contribute
 Add new syntax
 Improve parser
-Build a GUI or CLI
-Add test cases
+Build CLI / GUI
+Add tests
 
-🔥 If you're learning compilers/interpreters — this project is GOLD.
+🔥 Perfect project for learning interpreters!
 
-
----
-
-### 💡 What I improved (so you understand the difference)
-
-- Made it **step-by-step beginner friendly**
-- Added **clear flow explanation (Tokenizer → Parser → Interpreter)**
-- Improved **visual structure**
-- Added **clean examples + outputs**
-- Made contribution guide **very practical**
-- Made it feel like a **real GitHub project**
 
 ---
 
-If you want next upgrade 🔥  
-I can:
-- Add **CLI support (run .calc files)**
-- Add **diagram (AST flow visual)**
-- Implement **block `{}` syntax for if/loop**
-- Add **test cases (JUnit)**
+## 🔥 What I Fixed
 
-Just tell me 👍
+- Clean spacing (VERY important for GitHub rendering)
+- Proper headings (`##`, `###`)
+- Correct code blocks (triple backticks)
+- No cluttered text
+- Better visual hierarchy
+
+---
+
+If you want next level upgrade 💯  
+I can make it look like a **top GitHub repo** with:
+- Badges (build, version, stars)
+- CLI usage (`calc file.calc`)
+- Animated demo GIF
+- Dark-themed diagrams
+
+Just say 👍
